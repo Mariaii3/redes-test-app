@@ -109,7 +109,7 @@ const preguntas = [
     correcta: 1,
     justificacion: "Internet, basada en TCP/IP, surgió a principios de los noventa y se extendió rápidamente, proporcionando aplicaciones útiles y mayor flexibilidad frente al modelo OSI completo."
   },
-    {
+  {
     enunciado: "¿Cuál es la principal diferencia entre una red LAN y una MAN?",
     opciones: [
       "Las MAN solo transmiten datos y no voz",
