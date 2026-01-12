@@ -11,90 +11,90 @@
 
 <script src="./preguntas.js"></script>
 <script>
-  // ✅ Variables globales
-  let actual = 0;
-  let bien = 0;
-  let mal = 0;
-  let respondida = false;
+let actual = 0;
+let bien = 0;
+let mal = 0;
+let respondida = false;
 
-  // ✅ Mostrar la pregunta actual
-  function mostrarPregunta() {
-    respondida = false;
-    const p = preguntas[actual];
+// Mostrar pregunta actual
+function mostrarPregunta() {
+  respondida = false;
+  const p = preguntas[actual];
 
-    let html = `
-      <h1>Pregunta ${actual + 1}</h1>
-      <h2>${p.enunciado}</h2>
-    `;
+  let html = `
+    <h1>Pregunta ${actual + 1}</h1>
+    <h2>${p.enunciado}</h2>
+  `;
 
-    p.opciones.forEach((op, i) => {
-      html += `<button class="opcion" onclick="responder(this, ${i})">${op}</button>`;
-    });
+  p.opciones.forEach((op, i) => {
+    html += `<button class="opcion" onclick="responder(this, ${i})">${op}</button>`;
+  });
 
-    html += `
-      <div class="justificacion" id="justificacion">
-        <b>Justificación:</b> ${p.justificacion}
-      </div>
-      <button class="boton" onclick="toggleJustificacion()">Ver / Ocultar justificación</button>
-    `;
+  html += `
+    <div class="justificacion" id="justificacion">
+      <b>Justificación:</b> ${p.justificacion}
+    </div>
 
-    document.getElementById("contenido").innerHTML = html;
-  }
+    <button class="boton" onclick="toggleJustificacion()">Ver / Ocultar justificación</button>
+  `;
 
-  // ✅ Responder a la pregunta
-  function responder(boton, i) {
-    if (respondida) return;
-    respondida = true;
+  document.getElementById("contenido").innerHTML = html;
+}
 
-    const p = preguntas[actual];
-    const botones = document.querySelectorAll(".opcion");
+// Responder a la pregunta
+function responder(boton, i) {
+  if (respondida) return;
+  respondida = true;
 
-    botones.forEach((b, index) => {
-      if (index === p.correcta) b.classList.add("correcta");
-      if (index === i && i !== p.correcta) b.classList.add("incorrecta");
-      b.disabled = true;
-    });
+  const p = preguntas[actual];
+  const botones = document.querySelectorAll(".opcion");
 
-    if (i === p.correcta) bien++;
-    else mal++;
+  botones.forEach((b, index) => {
+    if (index === p.correcta) b.classList.add("correcta");
+    if (index === i && i !== p.correcta) b.classList.add("incorrecta");
+    b.disabled = true;
+  });
 
-    // Botón "Siguiente"
-    const btn = document.createElement("button");
-    btn.className = "boton";
-    btn.textContent = "Siguiente pregunta";
-    btn.onclick = siguiente;
-    document.getElementById("contenido").appendChild(btn);
-  }
+  if (i === p.correcta) bien++;
+  else mal++;
 
-  // ✅ Mostrar / ocultar justificación
-  function toggleJustificacion() {
-    const j = document.getElementById("justificacion");
-    if (j) j.style.display = (j.style.display === "none") ? "block" : "none";
-  }
+  // Botón "Siguiente pregunta"
+  const btn = document.createElement("button");
+  btn.className = "boton";
+  btn.textContent = "Siguiente pregunta";
+  btn.onclick = siguiente;
+  document.getElementById("contenido").appendChild(btn);
+}
 
-  // ✅ Siguiente pregunta
-  function siguiente() {
-    actual++;
-    if (actual < preguntas.length) mostrarPregunta();
-    else mostrarResultado();
-  }
+// Mostrar/ocultar justificación
+function toggleJustificacion() {
+  const j = document.getElementById("justificacion");
+  if (j) j.style.display = (j.style.display === "none") ? "block" : "none";
+}
 
-  // ✅ Mostrar resultado final
-  function mostrarResultado() {
-    const nota = bien - Math.floor(mal / 3);
+// Pasar a la siguiente pregunta
+function siguiente() {
+  actual++;
+  if (actual < preguntas.length) mostrarPregunta();
+  else mostrarResultado();
+}
 
-    document.getElementById("contenido").innerHTML = `
-      <h1>Resultado final</h1>
-      <p>✔ Correctas: ${bien}</p>
-      <p>❌ Incorrectas: ${mal}</p>
-      <h2>Nota final: ${nota}</h2>
-    `;
-  }
+// Mostrar resultado final
+function mostrarResultado() {
+  const nota = bien - Math.floor(mal / 3);
 
-  // ✅ Ejecutar al cargar la página
-  window.onload = function() {
-    mostrarPregunta();
-  };
+  document.getElementById("contenido").innerHTML = `
+    <h1>Resultado final</h1>
+    <p>✔ Correctas: ${bien}</p>
+    <p>❌ Incorrectas: ${mal}</p>
+    <h2>Nota final: ${nota}</h2>
+  `;
+}
+
+// Ejecutar al cargar la página
+window.onload = function() {
+  mostrarPregunta();
+};
 </script>
 
 </body>
