@@ -2,70 +2,14 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Test Redes</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Prueba</title>
 </head>
 <body>
 
-<h1>Test de Redes de Computadores</h1>
-<div id="contenido"></div>
+<h1>SI VES ESTO, HTML FUNCIONA</h1>
 
-<script src="preguntas.js"></script>
 <script>
-let actual = 0;
-let bien = 0;
-let mal = 0;
-
-function mostrarPregunta() {
-  const p = preguntas[actual];
-  let html = `<h2>${p.enunciado}</h2>`;
-
-  p.opciones.forEach((op, i) => {
-    html += `<button onclick="responder(${i})">${op}</button><br>`;
-  });
-
-  document.getElementById("contenido").innerHTML = html;
-}
-
-function responder(i) {
-  const p = preguntas[actual];
-  let mensaje = "";
-
-  if (i === p.correcta) {
-    bien++;
-    mensaje = "✔ Correcta<br>";
-  } else {
-    mal++;
-    mensaje = "❌ Incorrecta<br>";
-  }
-
-  mensaje += `<b>Justificación:</b> ${p.justificacion}<br><br>`;
-  mensaje += `<button onclick="siguiente()">Siguiente</button>`;
-
-  document.getElementById("contenido").innerHTML = mensaje;
-}
-
-function siguiente() {
-  actual++;
-  if (actual < preguntas.length) {
-    mostrarPregunta();
-  } else {
-    mostrarResultado();
-  }
-}
-
-function mostrarResultado() {
-  const nota = bien - Math.floor(mal / 3);
-
-  document.getElementById("contenido").innerHTML = `
-    <h2>Resultado final</h2>
-    <p>✔ Correctas: ${bien}</p>
-    <p>❌ Incorrectas: ${mal}</p>
-    <p><b>Nota final:</b> ${nota}</p>
-  `;
-}
-
-mostrarPregunta();
+  document.body.innerHTML += "<p>Y JavaScript TAMBIÉN funciona</p>";
 </script>
 
 </body>
