@@ -1,14 +1,15 @@
+/* 🔹 Estilos generales */
 body {
   margin: 0;
   min-height: 100vh;
   background: #f2f4f8;
   font-family: Arial, sans-serif;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* 🔹 Tarjeta de pregunta */
 .card {
   background: white;
   width: 90%;
@@ -16,12 +17,21 @@ body {
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-h1 {
   text-align: center;
+  transition: all 0.3s ease;
 }
 
+/* 🔹 Títulos */
+h1 {
+  margin-bottom: 15px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+/* 🔹 Opciones */
 .opcion {
   width: 100%;
   padding: 12px;
@@ -31,23 +41,26 @@ h1 {
   background: #fff;
   cursor: pointer;
   font-size: 16px;
-  transition: 0.2s;
+  transition: all 0.2s;
 }
 
 .opcion:hover {
   background: #f0f0f0;
 }
 
+/* 🔹 Verde si es correcta */
 .correcta {
-  background: #d4edda;
-  border-color: #28a745;
+  background: #d4edda !important;
+  border-color: #28a745 !important;
 }
 
+/* 🔹 Rojo si es incorrecta */
 .incorrecta {
-  background: #f8d7da;
-  border-color: #dc3545;
+  background: #f8d7da !important;
+  border-color: #dc3545 !important;
 }
 
+/* 🔹 Botones */
 .boton {
   margin-top: 15px;
   padding: 10px;
@@ -58,16 +71,19 @@ h1 {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.2s;
 }
 
 .boton:hover {
   background: #0056b3;
 }
 
+/* 🔹 Justificación */
 .justificacion {
   margin-top: 15px;
   padding: 10px;
   background: #f8f9fa;
   border-radius: 8px;
   display: none;
+  text-align: left;
 }
