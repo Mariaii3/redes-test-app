@@ -109,4 +109,202 @@ const preguntas = [
     correcta: 1,
     justificacion: "Internet, basada en TCP/IP, surgió a principios de los noventa y se extendió rápidamente, proporcionando aplicaciones útiles y mayor flexibilidad frente al modelo OSI completo."
   }
+    {
+    enunciado: "¿Cuál es la principal diferencia entre una red LAN y una MAN?",
+    opciones: [
+      "Las MAN solo transmiten datos y no voz",
+      "Las MAN emplean tecnologías distintas a las LAN",
+      "Las MAN son una extensión geográfica de las LAN y pueden cubrir una ciudad",
+      "Las MAN utilizan exclusivamente conmutación de circuitos"
+    ],
+    correcta: 2,
+    justificacion: "Las MAN son una versión ampliada de las LAN en cuanto a extensión geográfica, pudiendo abarcar una ciudad y usando tecnologías similares."
+  },
+  {
+    enunciado: "¿Qué estándar IEEE define la arquitectura DQDB para redes MAN?",
+    opciones: [
+      "IEEE 802.3",
+      "IEEE 802.5",
+      "IEEE 802.6",
+      "IEEE 802.11"
+    ],
+    correcta: 2,
+    justificacion: "El bus dual de cola distribuida (DQDB) está normalizado por la IEEE en el estándar 802.6."
+  },
+  {
+    enunciado: "¿Cómo está formada la arquitectura DQDB?",
+    opciones: [
+      "Un único bus bidireccional compartido",
+      "Dos buses unidireccionales independientes",
+      "Una topología en anillo con paso de testigo",
+      "Una red punto a punto entre todos los nodos"
+    ],
+    correcta: 1,
+    justificacion: "DQDB se basa en dos buses unidireccionales a los que se conectan todas las computadoras."
+  },
+  {
+    enunciado: "¿Qué función cumple el head-end en una red DQDB?",
+    opciones: [
+      "Controlar el encaminamiento de paquetes",
+      "Gestionar la congestión de la red",
+      "Iniciar la actividad de transmisión en cada bus",
+      "Asignar direcciones IP a los nodos"
+    ],
+    correcta: 2,
+    justificacion: "Cada bus DQDB tiene un head-end que inicia la actividad de transmisión."
+  },
+  {
+    enunciado: "En una red DQDB, ¿qué bus se utiliza para enviar tráfico hacia una estación situada a la izquierda del emisor?",
+    opciones: [
+      "Bus superior",
+      "Bus A",
+      "Bus inferior",
+      "Cualquiera indistintamente"
+    ],
+    correcta: 2,
+    justificacion: "El tráfico hacia la izquierda del emisor utiliza el bus inferior."
+  },
+  {
+    enunciado: "¿Cuál es la arquitectura básica de una red WAN?",
+    opciones: [
+      "Un único canal compartido por todos los hosts",
+      "Hosts conectados mediante buses duales",
+      "Hosts interconectados mediante routers unidos por líneas punto a punto",
+      "Topología en anillo con paso de testigo"
+    ],
+    correcta: 2,
+    justificacion: "Las WAN se basan en hosts remotos interconectados mediante routers unidos por enlaces punto a punto."
+  },
+  {
+    enunciado: "¿Qué función principal realizan los routers en una red WAN?",
+    opciones: [
+      "Convertir señales analógicas en digitales",
+      "Encaminar la información entre host origen y destino",
+      "Gestionar el control de errores extremo a extremo",
+      "Establecer circuitos físicos dedicados"
+    ],
+    correcta: 1,
+    justificacion: "Los routers se encargan de encaminar la información entre hosts en una WAN."
+  },
+  {
+    enunciado: "¿Por qué las velocidades en las redes WAN suelen ser inferiores a las de las LAN?",
+    opciones: [
+      "Porque usan tecnologías obsoletas",
+      "Porque las comunicaciones remotas son más susceptibles a errores",
+      "Porque emplean conmutación de circuitos",
+      "Porque no permiten topologías complejas"
+    ],
+    correcta: 1,
+    justificacion: "Las comunicaciones a larga distancia son más propensas a errores, lo que reduce las velocidades de transmisión."
+  },
+  {
+    enunciado: "¿Cuál de las siguientes es una red pública de datos?",
+    opciones: [
+      "SNA de IBM",
+      "DNA de Digital",
+      "RTC",
+      "Red privada corporativa"
+    ],
+    correcta: 2,
+    justificacion: "La RTC es una red pública de datos gestionada por una entidad pública o de acceso general."
+  },
+  {
+    enunciado: "¿Qué caracteriza a una red privada de datos?",
+    opciones: [
+      "Su uso está abierto al público general",
+      "Está gestionada por una entidad corporativa para uso propio",
+      "Utiliza exclusivamente conmutación de paquetes",
+      "Carece de control de acceso"
+    ],
+    correcta: 1,
+    justificacion: "Las redes privadas de datos están gestionadas por entidades corporativas para su propio uso."
+  },
+  {
+    enunciado: "¿Qué define a una red de conmutación de circuitos?",
+    opciones: [
+      "Los paquetes pueden seguir caminos distintos",
+      "Existe un camino fijo y dedicado durante toda la comunicación",
+      "El medio físico se comparte entre múltiples comunicaciones",
+      "No requiere establecimiento previo de conexión"
+    ],
+    correcta: 1,
+    justificacion: "En la conmutación de circuitos se establece un camino físico dedicado durante toda la comunicación."
+  },
+  {
+    enunciado: "¿Por qué es necesario un módem para transmitir datos digitales por la RTC?",
+    opciones: [
+      "Porque la RTC solo transmite señales digitales",
+      "Porque convierte información analógica en analógica",
+      "Porque adapta la información digital a una señal analógica",
+      "Porque controla los errores de transmisión"
+    ],
+    correcta: 2,
+    justificacion: "El módem modula y demodula la información digital para que pueda transmitirse por líneas analógicas."
+  },
+  {
+    enunciado: "¿Cuál es una desventaja de la conmutación de circuitos?",
+    opciones: [
+      "Bajo aprovechamiento del canal",
+      "Alta tasa de errores",
+      "Imposibilidad de transmitir voz",
+      "Excesiva fragmentación de la información"
+    ],
+    correcta: 0,
+    justificacion: "El canal queda dedicado a una sola comunicación, lo que reduce el aprovechamiento del ancho de banda."
+  },
+  {
+    enunciado: "¿Qué es un paquete en una red de conmutación de paquetes?",
+    opciones: [
+      "Un canal físico dedicado",
+      "Una unidad de información con cabecera y datos",
+      "Un circuito virtual permanente",
+      "Un nodo de encaminamiento"
+    ],
+    correcta: 1,
+    justificacion: "La información se fragmenta en paquetes que incluyen cabecera y datos."
+  },
+  {
+    enunciado: "¿Qué característica distingue a los circuitos virtuales?",
+    opciones: [
+      "Cada paquete sigue una ruta diferente",
+      "No existe información de destino en los paquetes",
+      "Todos los paquetes siguen el mismo camino durante la comunicación",
+      "No requieren establecimiento previo"
+    ],
+    correcta: 2,
+    justificacion: "En los circuitos virtuales se establece un camino lógico que siguen todos los paquetes."
+  },
+  {
+    enunciado: "¿Por qué la conmutación de paquetes puede introducir más retardo que la de circuitos?",
+    opciones: [
+      "Porque los routers son dispositivos electrónicos simples",
+      "Porque los nodos requieren procesamiento software y pueden congestionarse",
+      "Porque el ancho de banda es menor",
+      "Porque los paquetes no tienen cabecera"
+    ],
+    correcta: 1,
+    justificacion: "Los nodos de conmutación de paquetes realizan procesamiento software y pueden sufrir congestión."
+  },
+  {
+    enunciado: "¿Qué ventaja presentan los circuitos virtuales frente a la conmutación de circuitos?",
+    opciones: [
+      "Menor retardo",
+      "Uso exclusivo del canal",
+      "Mejor aprovechamiento del ancho de banda",
+      "Ausencia de control de errores"
+    ],
+    correcta: 2,
+    justificacion: "El medio físico se comparte entre varias comunicaciones, aprovechando mejor el ancho de banda."
+  },
+  {
+    enunciado: "¿Qué diferencia fundamental existe entre circuitos virtuales y datagramas?",
+    opciones: [
+      "Los datagramas requieren camino fijo",
+      "Los circuitos virtuales no tienen cabecera",
+      "En los datagramas cada paquete puede seguir rutas distintas",
+      "Los datagramas son más fiables"
+    ],
+    correcta: 2,
+    justificacion: "En el esquema de datagramas cada paquete puede seguir rutas diferentes y llegar desordenado o perderse."
+  }
 ];
