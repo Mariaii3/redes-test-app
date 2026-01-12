@@ -9,6 +9,16 @@ const preguntas = [
     ],
     correcta: 1,
     justificacion: "En una red de difusión todas las máquinas comparten un mismo canal."
+  },
+  {
+    enunciado: "¿Qué protocolo garantiza la entrega de paquetes?",
+    opciones: [
+      "UDP",
+      "TCP",
+      "ICMP",
+      "ARP"
+    ],
+    correcta: 1,
+    justificacion: "TCP es un protocolo orientado a conexión que garantiza la entrega de los datos."
   }
 ];
-
