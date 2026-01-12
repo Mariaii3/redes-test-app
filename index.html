@@ -2,14 +2,97 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Prueba</title>
+  <title>Test Redes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>SI VES ESTO, HTML FUNCIONA</h1>
+<div class="card" id="contenido"></div>
 
+<script src="./preguntas.js"></script>
 <script>
-  document.body.innerHTML += "<p>Y JavaScript TAMBIÉN funciona</p>";
+let actual = 0;
+let bien = 0;
+let mal = 0;
+let respondida = false;
+
+function mostrarPregunta() {
+  respondida = false;
+  const p = preguntas[actual];
+
+  let html = `
+    <h1>Pregunta ${actual + 1}</h1>
+    <h2>${p.enunciado}</h2>
+  `;
+
+  p.opciones.forEach((op, i) => {
+    html += `<button class="opcion" onclick="responder(this, ${i})">${op}</button>`;
+  });
+
+  html += `
+    <div class="justificacion" id="justificacion">
+      <b>Justificación:</b> ${p.justificacion}
+    </div>
+
+    <button class="boton" onclick="toggleJustificacion()">Ver / Ocultar justificación</button>
+  `;
+
+  document.getElementById("contenido").innerHTML = html;
+}
+
+function responder(boton, i) {
+  if (respondida) return;
+  respondida = true;
+
+  const p = preguntas[actual];
+  const botones = document.querySelectorAll(".opcion");
+
+  botones.forEach((b, index) => {
+    if (index === p.correcta) {
+      b.classList.add("correcta");
+    }
+    if (index === i && i !== p.correcta) {
+      b.classList.add("incorrecta");
+    }
+    b.disabled = true;
+  });
+
+  if (i === p.correcta) bien++;
+  else mal++;
+
+  const btn = document.createElement("button");
+  btn.className = "boton";
+  btn.textContent = "Siguiente pregunta";
+  btn.onclick = siguiente;
+  document.getElementById("contenido").appendChild(btn);
+}
+
+function toggleJustificacion() {
+  const j = document.getElementById("justificacion");
+  j.style.display = (j.style.display === "none") ? "block" : "none";
+}
+
+function siguiente() {
+  actual++;
+  if (actual < preguntas.length) {
+    mostrarPregunta();
+  } else {
+    mostrarResultado();
+  }
+}
+
+function mostrarResultado() {
+  const nota = bien - Math.floor(mal / 3);
+
+  document.getElementById("contenido").innerHTML = `
+    <h1>Resultado final</h1>
+    <p>✔ Correctas: ${bien}</p>
+    <p>❌ Incorrectas: ${mal}</p>
+    <h2>Nota final: ${nota}</h2>
+  `;
+}
+
+mostrarPregunta();
 </script>
 
 </body>
